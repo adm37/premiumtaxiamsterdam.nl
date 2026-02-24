@@ -1,0 +1,28 @@
+<IfModule mod_headers.c>
+    # Ostr.io Token (Indien nodig, vervang YOUR_OSTRIO_TOKEN door je token van Ostr.io)
+    # RequestHeader set X-Prerender-Token "YOUR_OSTRIO_TOKEN"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    <IfModule mod_proxy_http.c>
+        # Lijst van bots die doorgestuurd moeten worden naar Ostr.io
+        RewriteCond %{HTTP_USER_AGENT} googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora\ link\ preview|showyoubot|outbrain|pinterest\/0\.|pinterestbot|slackbot|vkShare|W3C_Validator|whatsapp [NC,OR]
+        RewriteCond %{QUERY_STRING} _escaped_fragment_ [NC]
+        
+        # Proxy de request naar Ostr.io service
+        RewriteRule ^(?!.*?(\.js|\.css|\.xml|\.less|\.png|\.jpg|\.jpeg|\.gif|\.pdf|\.doc|\.txt|\.ico|\.rss|\.zip|\.mp3|\.rar|\.exe|\.wmv|\.doc|\.avi|\.ppt|\.mpg|\.mpeg|\.tif|\.wav|\.mov|\.psd|\.ai|\.xls|\.mp4|\.m4a|\.swf|\.dat|\.dmg|\.iso|\.flv|\.m4v|\.torrent|\.ttf|\.woff|\.svg)) (.*) http://prerender.ostr.io/%{REQUEST_SCHEME}://%{HTTP_HOST}/$2 [P,L]
+    </IfModule>
+</IfModule>
+
+# Standaard React SPA fallback (zorgt dat verversen van pagina's werkt)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-l
+    RewriteRule . /index.html [L]
+</IfModule>

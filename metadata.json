@@ -1,0 +1,7 @@
+{
+  "name": "Premium Taxi Amsterdam - Taxi Amsterdam & Schiphol Taxi",
+  "description": "De #1 Premium Taxi Amsterdam voor ritten in de stad en Schiphol Taxi Airport transfers. Vaste lage tarieven, luxe auto's en professionele chauffeurs. Boek uw Premium Taxi Amsterdam direct online.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
