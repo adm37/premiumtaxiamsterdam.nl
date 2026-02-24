@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { generatePageMetadata, SITE_CONFIG } from "./lib/metadata";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "Premium Taxi Amsterdam | Betrouwbare Taximservice",
-  description: "Professionele taximservice in Amsterdam. Luxe Mercedes en Tesla vloot. Directe contact, vaste prijzen.",
-};
+export const metadata: Metadata = generatePageMetadata(
+  SITE_CONFIG.title,
+  SITE_CONFIG.description,
+  "/"
+);
 
 export default function RootLayout({
   children,

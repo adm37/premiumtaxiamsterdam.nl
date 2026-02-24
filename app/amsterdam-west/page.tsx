@@ -1,8 +1,10 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
+import { getLocationMetadata } from '../lib/metadata';
+
+export const metadata: Metadata = getLocationMetadata('Amsterdam West', '/amsterdam-west');
 
 export default function AmsterdamWestPage() {
   return (

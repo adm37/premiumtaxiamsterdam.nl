@@ -1,7 +1,13 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { generatePageMetadata } from '../lib/metadata';
+
+export const metadata: Metadata = generatePageMetadata(
+  'Contact Premium Taxi Amsterdam | 24/7 Bereikbaar',
+  'Neem contact op met Premium Taxi Amsterdam. Directe lijn, e-mailadres en contactformulier. 24/7 open voor uw vragen.',
+  '/contact'
+);
 
 const ContactPage = () => {
   return (

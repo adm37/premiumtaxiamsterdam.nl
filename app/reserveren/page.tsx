@@ -1,8 +1,14 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
+import { generatePageMetadata } from '../lib/metadata';
+
+export const metadata: Metadata = generatePageMetadata(
+  'Taxi Reserveren Amsterdam | Premium Taxi',
+  'Reserveer uw taxi in Amsterdam. Online boeken of direct bellen. 24/7 beschikbaar, vaste prijzen, professionele chauffeurs.',
+  '/reserveren'
+);
 
 const BookingPage = () => {
   return (

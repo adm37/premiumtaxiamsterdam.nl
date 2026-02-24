@@ -1,7 +1,13 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { generatePageMetadata } from '../lib/metadata';
+
+export const metadata: Metadata = generatePageMetadata(
+  'Taxi naar Schiphol | €45 Vaste Prijs Amsterdam',
+  'Taxi naar Schiphol Airport voor een vaste prijs van €45. Snel, betrouwbaar en professioneel vervoer van Amsterdam naar Schiphol.',
+  '/schiphol'
+);
 
 const SchipholRatesPage = () => {
   const rates = [

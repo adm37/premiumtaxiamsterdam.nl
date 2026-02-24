@@ -1,7 +1,9 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { getAdminMetadata } from '../lib/metadata';
+
+export const metadata: Metadata = getAdminMetadata();
 
 const AdminPage = () => {
   return (
