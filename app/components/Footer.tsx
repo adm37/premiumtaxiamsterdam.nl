@@ -26,13 +26,12 @@ const Footer: React.FC = () => {
             <h4 className="font-black uppercase tracking-widest text-xs text-red-600 mb-8">Wij Rijden in</h4>
             <ul className="space-y-4 text-neutral-400 font-bold uppercase text-[11px] tracking-[0.2em]">
               <li><Link href="/amsterdam-centrum" className="hover:text-white transition-colors">AMSTERDAM CENTRUM</Link></li>
-              <li><Link href="/de-pijp" className="hover:text-white transition-colors">DE PIJP</Link></li>
-              <li><Link href="/amsterdam-west" className="hover:text-white transition-colors">AMSTERDAM WEST</Link></li>
               <li><Link href="/amsterdam-noord" className="hover:text-white transition-colors">AMSTERDAM NOORD</Link></li>
+              <li><Link href="/amsterdam-west" className="hover:text-white transition-colors">AMSTERDAM WEST</Link></li>
               <li><Link href="/amsterdam-zuid" className="hover:text-white transition-colors">AMSTERDAM ZUID</Link></li>
               <li><Link href="/ijburg" className="hover:text-white transition-colors">IJBURG</Link></li>
-              <li><Link href="/zeeburg" className="hover:text-white transition-colors">ZEEBURG</Link></li>
               <li><Link href="/diemen" className="hover:text-white transition-colors">DIEMEN</Link></li>
+              <li><Link href="/de-pijp" className="hover:text-white transition-colors">DE PIJP</Link></li>
             </ul>
           </div>
 
@@ -80,3 +79,4 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+
