@@ -6,14 +6,15 @@ import { usePathname } from 'next/navigation';
 
 const Header: React.FC = () => {
   const pathname = usePathname();
+  const safePathname = pathname ?? '/';
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const currentView = pathname === '/' ? 'home' 
-    : pathname.includes('/reserveren') ? 'reserveren'
-    : pathname.includes('/schiphol') ? 'schiphol'
-    : pathname.includes('/contact') ? 'contact'
-    : pathname.includes('/admin') ? 'admin'
+  const currentView = safePathname === '/' ? 'home' 
+    : safePathname.includes('/reserveren') ? 'reserveren'
+    : safePathname.includes('/schiphol') ? 'schiphol'
+    : safePathname.includes('/contact') ? 'contact'
+    : safePathname.includes('/admin') ? 'admin'
     : 'home';
 
   useEffect(() => {
@@ -81,7 +82,7 @@ const Header: React.FC = () => {
               <Link 
                 key={item.name} 
                 href={item.href}
-                className={`hover:text-red-600 transition-colors ${isScrolled || currentView !== 'home' ? 'text-neutral-700' : 'text-white'} ${pathname === item.href ? 'text-red-600' : ''}`}
+                className={`hover:text-red-600 transition-colors ${isScrolled || currentView !== 'home' ? 'text-neutral-700' : 'text-white'} ${safePathname === item.href ? 'text-red-600' : ''}`}
               >
                 {item.name}
               </Link>
